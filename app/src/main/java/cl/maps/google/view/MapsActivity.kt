@@ -1,7 +1,8 @@
-package cl.maps.google
+package cl.maps.google.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import cl.maps.google.R
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
