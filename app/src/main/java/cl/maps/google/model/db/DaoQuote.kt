@@ -14,7 +14,7 @@ interface DaoQuote {
         fun getAllQuote() : LiveData<List<QuoteEntity>>
 
         @Insert(onConflict = OnConflictStrategy.REPLACE)
-        suspend fun insertQuote(heroList: List<QuoteEntity>)
+        suspend fun insertQuote(quoteList: List<QuoteEntity>)
 
         @Query("SELECT id, body, author FROM quote_table")
         fun getMinimalQuote() : LiveData<List<QuoteMini>>

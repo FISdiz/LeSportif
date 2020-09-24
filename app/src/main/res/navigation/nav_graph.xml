@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="cl.maps.google.view.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_quoteFragment"
+            app:destination="@id/quoteFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_registro"
+            app:destination="@id/registro" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/quoteFragment"
+        android:name="cl.maps.google.view.QuoteFragment"
+        android:label="fragment_list_quoteragment"
+        tools:layout="@layout/fragment_list_quoteragment" >
+        <action
+            android:id="@+id/action_quoteFragment_to_listQuoteragment"
+            app:destination="@id/listQuoteragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listQuoteragment"
+        android:name="cl.maps.google.view.ListQuoteragment"
+        android:label="fragment_quote"
+        tools:layout="@layout/fragment_quote" />
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="cl.maps.google.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/registro"
+        android:name="cl.maps.google.view.Registro"
+        android:label="Registro" />
+
+</navigation>

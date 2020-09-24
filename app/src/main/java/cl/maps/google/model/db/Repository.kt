@@ -3,7 +3,8 @@ package cl.maps.google.model.db
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
-import cl.maps.google.model.remote.QuoteXX
+import cl.maps.google.model.Quote
+import cl.maps.google.model.QuoteX
 import cl.maps.google.model.remote.RetrofitClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -20,20 +21,20 @@ class Repository(context: Context) {
     fun loadApiData() {
         val call = RetrofitClient.retrofitInstance().listQuote()
 
-        call.enqueue(object : Callback<List<QuoteXX>> {
-            override fun onResponse(call: Call<List<QuoteXX>>, response: Response<List<QuoteXX>>) {
+        call.enqueue(object : Callback<Quote> {
+            override fun onResponse(call: Call<Quote>, response: Response<Quote>) {
                 Log.d("Adapter", "${response.code()}")
                 Log.d("Adapter", "${response.body()}")
-                saveDatabase(quoteConverter(response.body()!!))
+                saveDatabase(quoteConverter(response.body()!!.quotes))
             }
 
-            override fun onFailure(call: Call<List<QuoteXX>>, t: Throwable) {
-                Log.d("Adapter", "Error al cargar heroes $t")
+            override fun onFailure(call: Call<Quote>, t: Throwable) {
+                Log.d("Adapter", "Error al cargar frases $t")
             }
         })
     }
 
-    fun quoteConverter(listQuote: List<QuoteXX>): List<QuoteEntity> {
+    fun quoteConverter(listQuote: List<QuoteX>): List<QuoteEntity> {
         return listQuote.map { quote -> QuoteEntity(quote.id, quote.author, quote.body) }
     }
 
