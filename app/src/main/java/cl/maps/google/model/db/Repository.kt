@@ -15,7 +15,7 @@ import retrofit2.Response
 class Repository(context: Context) {
 
     var quoteDatabase = QuoteDatabase.getDatabase(context)
-    var listQuote = quoteDatabase.getQuoteDao().getAllQuote()
+    var listQuote = quoteDatabase.getQuoteDao().getMinimalQuote()
 
     fun loadApiData() {
         val call = RetrofitClient.retrofitInstance().listQuote()
