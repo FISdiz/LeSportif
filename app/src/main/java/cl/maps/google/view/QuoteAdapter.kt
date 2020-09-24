@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import cl.maps.google.R
 import cl.maps.google.model.db.QuoteEntity
 import cl.maps.google.model.db.QuoteMini
+import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.fragment_list_quoteragment.view.*
+import kotlinx.android.synthetic.main.fragment_quote.view.*
 
 class QuoteAdapter(private var quoteDataset: MutableList<QuoteMini>) : RecyclerView.Adapter<QuoteAdapter.QuoteViewHolder>() {
 
@@ -22,7 +24,10 @@ class QuoteAdapter(private var quoteDataset: MutableList<QuoteMini>) : RecyclerV
         Log.d("Adapter", "${quoteDataset.get(position)}")
         holder.textTitle.text = quoteDataset.get(position).body
         holder.textTitle2.text = quoteDataset.get(position).author
-        quoteSelected.value = quoteDataset.get(position)
+        holder.button2.setOnClickListener{
+            quoteSelected.value = quoteDataset.get(position)
+       }
+
     }
 
     override fun getItemCount(): Int {
@@ -38,6 +43,8 @@ class QuoteAdapter(private var quoteDataset: MutableList<QuoteMini>) : RecyclerV
     class QuoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var textTitle = itemView.body
         var textTitle2 = itemView.author
+        var button1 = itemView.buttonMap
+        var button2 = itemView.buttonField
 
     }
 }
