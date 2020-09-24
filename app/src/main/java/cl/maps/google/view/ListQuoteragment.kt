@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import cl.maps.google.R
 import cl.maps.google.model.db.QuoteMini
 import cl.maps.google.viewmodel.QuoteViewModel
+import kotlinx.android.synthetic.main.fragment_list_quoteragment.*
 import kotlinx.android.synthetic.main.fragment_quote.*
 
 // TODO: Rename parameter arguments, choose names that match
