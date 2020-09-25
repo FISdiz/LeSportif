@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "35172730640",
+    "firebase_url": "https://lesportif-45c3f.firebaseio.com",
+    "project_id": "lesportif-45c3f",
+    "storage_bucket": "lesportif-45c3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35172730640:android:c6c19c1cfa8e3bfd1d4795",
+        "android_client_info": {
+          "package_name": "cl.maps.google"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "35172730640-073o4iqdmktp87m32aeug51fvml1abmo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cl.maps.google",
+            "certificate_hash": "1e7ebcc2816ac4e2eb2fd38b063abac912fb1b8d"
+          }
+        },
+        {
+          "client_id": "35172730640-bnj8lmq1svlkfplkd2rr4reja77eaa2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQsHwRXiA90uYZEOEe9vaMXKY0EPItbcQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "35172730640-bnj8lmq1svlkfplkd2rr4reja77eaa2v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
