@@ -14,11 +14,11 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ListQuoteragment.newInstance] factory method to
+ * Use the [ListQuoteFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
 
-class ListQuoteragment : Fragment() {
+class DetailQuoteFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -40,10 +40,9 @@ class ListQuoteragment : Fragment() {
     }
 
     companion object {
-
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ListQuoteragment().apply {
+            DetailQuoteFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

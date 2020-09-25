@@ -7,7 +7,7 @@ import retrofit2.http.Headers
 
 interface QuoteAPI {
       @GET("quotes/")
-      @Headers("Authorization: Token token=\"7fdf59b437d9144877d04cf063176830\"")
+      @Headers(API_KEY2)
       fun listQuote(): Call<Quote>
 
 }
