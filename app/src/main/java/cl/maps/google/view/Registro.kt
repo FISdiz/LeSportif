@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import cl.maps.google.R
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_register.*
@@ -37,22 +38,33 @@ class Registro : Fragment() {
         buttonRegister2.setOnClickListener{
             val text1 = editText2.text.toString()
             val text0 = editText.text.toString()
-            signIn(text1, text0)
+            logIn(text1, text0)
+        }
+        buttonLog.setOnClickListener{
+            findNavController().navigate(R.id.action_registro_to_registroFragment)
         }
     }
 
     override fun onStart() {
         super.onStart()
     val currentUser = auth.currentUser
-        //updateUI(currentUser)
+        updateUI(currentUser)
     }
-    fun signIn(user: String, pass: String){
+
+    private fun updateUI(currentUser: FirebaseUser?) {
+        if (currentUser!= null){
+            findNavController().navigate(R.id.action_registro_to_mainFragment)
+        }
+    }
+
+    fun logIn(user: String, pass: String){
         auth.signInWithEmailAndPassword(user, pass).addOnCompleteListener {
             task ->
             if(task.isSuccessful){
                 val user = auth.currentUser
                 Toast.makeText(context, "Authentication succes", Toast.LENGTH_SHORT).show()
                   findNavController().navigate(R.id.action_registro_to_mainFragment)
+
 
             } else {
                 Toast.makeText(context, "Authentication fail", Toast.LENGTH_SHORT).show()

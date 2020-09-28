@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_mainFragment_to_mapsFragment"
             app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_registro"
+            app:destination="@id/registro" />
 
     </fragment>
     <fragment
@@ -43,6 +46,17 @@
         android:label="Registro" >
         <action
             android:id="@+id/action_registro_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_registro_to_registroFragment"
+            app:destination="@id/registroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registroFragment"
+        android:name="cl.maps.google.RegistroFragment"
+        android:label="RegistroFragment" >
+        <action
+            android:id="@+id/action_registroFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
 

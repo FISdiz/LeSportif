@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import cl.maps.google.R
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
@@ -25,6 +27,10 @@ class MainFragment : Fragment() {
         }
         buttonMap.setOnClickListener{
             findNavController().navigate(R.id.action_mainFragment_to_mapsFragment)
+        }
+        buttonRegister.setOnClickListener{
+            Firebase.auth.signOut()
+            findNavController().navigate(R.id.action_mainFragment_to_registro)
         }
     }
 }
