@@ -26,8 +26,5 @@ class MainFragment : Fragment() {
         buttonMap.setOnClickListener{
             findNavController().navigate(R.id.action_mainFragment_to_mapsFragment)
         }
-        buttonRegister.setOnClickListener{
-            findNavController().navigate(R.id.action_mainFragment_to_registro)
-        }
     }
 }

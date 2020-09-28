@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import cl.maps.google.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -18,11 +19,8 @@ class Registro : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.fragment_register)
+
         auth = Firebase.auth
-        //val editText = findViewById<EditText>(R.id.editText)
-        val text1 = editText.text
-        val text0 = editText2.text
     }
 
     override fun onCreateView(
@@ -34,9 +32,19 @@ class Registro : Fragment() {
         return inflater.inflate(R.layout.fragment_register, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        buttonRegister2.setOnClickListener{
+            val text1 = editText2.text.toString()
+            val text0 = editText.text.toString()
+            signIn(text1, text0)
+        }
+    }
+
     override fun onStart() {
         super.onStart()
     val currentUser = auth.currentUser
+        //updateUI(currentUser)
     }
     fun signIn(user: String, pass: String){
         auth.signInWithEmailAndPassword(user, pass).addOnCompleteListener {
@@ -44,6 +52,8 @@ class Registro : Fragment() {
             if(task.isSuccessful){
                 val user = auth.currentUser
                 Toast.makeText(context, "Authentication succes", Toast.LENGTH_SHORT).show()
+                  findNavController().navigate(R.id.action_registro_to_mainFragment)
+
             } else {
                 Toast.makeText(context, "Authentication fail", Toast.LENGTH_SHORT).show()
 

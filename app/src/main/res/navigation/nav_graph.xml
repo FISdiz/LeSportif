@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/registro">
 
     <fragment
         android:id="@+id/mainFragment"
@@ -16,9 +16,6 @@
         <action
             android:id="@+id/action_mainFragment_to_mapsFragment"
             app:destination="@id/mapsFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_registro"
-            app:destination="@id/registro" />
 
     </fragment>
     <fragment
@@ -32,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/listQuoteragment"
-        android:name="cl.maps.google.view.ListQuoteragment"
+        android:name="cl.maps.google.view.DetailQuoteFragment"
         android:label="fragment_quote"
         tools:layout="@layout/fragment_quote" />
     <fragment
@@ -43,6 +40,10 @@
     <fragment
         android:id="@+id/registro"
         android:name="cl.maps.google.view.Registro"
-        android:label="Registro" />
+        android:label="Registro" >
+        <action
+            android:id="@+id/action_registro_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 
 </navigation>
