@@ -32,5 +32,8 @@ class MainFragment : Fragment() {
             Firebase.auth.signOut()
             findNavController().navigate(R.id.action_mainFragment_to_registro)
         }
+        /*buttonPlan.setOnClickListener{
+            findNavController().navigate(R.id.)
+        }*/
     }
 }

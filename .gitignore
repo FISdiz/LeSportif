@@ -13,3 +13,7 @@
 .externalNativeBuild
 .cxx
 libs/
+/src/main/java/cl/maps/google/model/remote/Debugging.kt
+/src/debug/res/values/google_maps_api.xml
+src/main/java/cl/maps/google/model/remote/Debugging.kt
+src/main/res/values/keys.xml
