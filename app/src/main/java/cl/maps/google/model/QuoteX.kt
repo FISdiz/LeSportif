@@ -25,5 +25,6 @@ data class QuoteX(
     @SerializedName("upvotes_count")
     val upvotesCount: Int,
     @SerializedName("url")
-    val url: String
+    val url: String,
+    var favorite: Boolean
 )

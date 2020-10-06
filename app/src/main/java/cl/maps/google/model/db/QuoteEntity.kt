@@ -7,6 +7,6 @@ import androidx.room.PrimaryKey
 data class QuoteEntity(
     @PrimaryKey val id: Int,
     val body: String,
-    val author: String
-
+    val author: String,
+    var favorite: Boolean
 )

@@ -22,6 +22,18 @@ class QuoteAdapter(private var quoteDataset: MutableList<QuoteMini>) : RecyclerV
         holder.textTitle.text = quoteDataset.get(position).body
         holder.textTitle2.text = quoteDataset.get(position).author
         holder.textTitle3.text = quoteDataset.get(position).id.toString()
+       Log.d("ADAPTER", "${quoteDataset.get(position).favorite}")
+       holder.starFav.setOnClickListener{
+           if (!quoteDataset.get(position).favorite) {
+               quoteDataset.get(position).favorite = true
+               holder.starFav.setBackgroundResource(R.drawable.ic_baseline_star_border_24)
+           } else {
+               quoteDataset.get(position).favorite = false
+               holder.starFav.setBackgroundResource(R.drawable.ic_baseline_star_24)
+           }
+           Log.d("ADAPTER2", "${quoteDataset.get(position).favorite}")
+       }
+
         quoteSelected.value = quoteDataset.get(position)
    }
 
@@ -39,6 +51,6 @@ class QuoteAdapter(private var quoteDataset: MutableList<QuoteMini>) : RecyclerV
         var textTitle = itemView.authorView
         var textTitle2 = itemView.bodyView
         var textTitle3 = itemView.idView
-
+        var starFav = itemView.imageButton
     }
 }

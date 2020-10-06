@@ -35,7 +35,7 @@ class Repository(context: Context) {
     }
 
     fun quoteConverter(listQuote: List<QuoteX>): List<QuoteEntity> {
-        return listQuote.map { quote -> QuoteEntity(quote.id, quote.author, quote.body) }
+        return listQuote.map { quote -> QuoteEntity(quote.id, quote.author, quote.body, quote.favorite) }
     }
 
     fun saveDatabase(listQuoteEntity: List<QuoteEntity>) {
